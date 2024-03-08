@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary Planner</title>
+    <link rel="stylesheet" href="day25.css">
+    <style> 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Travel Itinerary</h1>
+    <div id="itinerary">
+        
+    </div>
+
+    <script>
+        
+        const itineraryData = [
+            { place: 'Paris', date: '2024-03-15', description: 'Visit Eiffel Tower' },
+            { place: 'Rome', date: '2024-03-18', description: 'Explore Colosseum' },
+            { place: 'Barcelona', date: '2024-03-20', description: 'Relax on the beach' }
+            
+        ];
+
+        
+        function createItineraryItem(item) {
+            const div = document.createElement('div');
+            div.classList.add('itinerary-item');
+            div.innerHTML = `
+                <h2>${item.place}</h2>
+                <p>Date: ${item.date}</p>
+                <p>${item.description}</p>
+            `;
+            return div;
+        }
+
+       
+        const itineraryContainer = document.getElementById('itinerary');
+        itineraryData.forEach(item => {
+            const itineraryItem = createItineraryItem(item);
+            itineraryContainer.appendChild(itineraryItem);
+        });
+    </script>
+    <script src="day25.js"></script>
+</body>
+</html>
